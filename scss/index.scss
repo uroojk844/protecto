@@ -1,0 +1,71 @@
+@import "../scss/variables", "../scss/resets", "../scss/common";
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    
+    .gradient {
+        background: repeating-linear-gradient(-135deg, $primary 0 50px, $text 50px 100px);
+    }
+
+    .col {
+        height: 100%;
+        flex: 1 1 400px;
+    }
+}
+
+.content {
+    padding: 16px;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 16px;
+    color: $primary;
+
+    form {
+        width: min(400px, 100%);
+        display: grid;
+        gap: 16px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 6px;
+        outline: transparent;
+        border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+        background-color: $primary;
+        color: $text;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    
+
+    .logo {
+        max-width: 200px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .welcome {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    p{
+        font-size: 14px;
+        color: $gray;
+        font-weight: 500;
+
+        a {
+            color: $primary;
+            font-weight: 600;
+        }
+    }
+}

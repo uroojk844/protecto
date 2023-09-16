@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col gradient hide-md"></div>
+        <div class="col content">
+            <div class="logo">
+                <img src="img/logo.png" alt="logo">
+            </div>
+            <div class="welcome">Connect with us!</div>
+
+            <form action="" onsubmit="submitForm(event)">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="name@email.com" required>
+                <input type="password" name="password" id="pass" placeholder="Password" required>
+                <input type="password" id="cpass" placeholder="Confirm Password" required>
+                <input type="submit" value="Sign up">
+                <p>Already have an account? <a href="index.htm">Sign in</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        let pass = $("#pass");
+        let cpass = $("#cpass");
+        let isSame = false;
+        
+        $("#pass, #cpass").keyup(function (e) {
+            if (pass.val() == cpass.val()) {
+                pass.addClass("success");
+                cpass.addClass("success");
+
+                pass.removeClass("error");
+                cpass.removeClass("error");
+                
+                isSame = true;
+            }else{
+                pass.removeClass("success");
+                cpass.removeClass("success");
+                
+                pass.addClass("error");
+                cpass.addClass("error");
+                
+                isSame = false;
+            }
+        });
+
+        function submitForm(e) {
+            e.preventDefault();
+            if(isSame) document.forms[0].submit();            
+        }
+    </script>
+</body>
+</html>

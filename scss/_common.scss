@@ -1,0 +1,19 @@
+.error {
+    border: 2px solid tomato !important;
+}
+
+.success {
+    border: 2px solid seagreen !important;
+}
+
+@media screen and (max-width: 768px) {
+    .hide-md {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hide-sm {
+        display: none;
+    }
+}
